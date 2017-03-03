@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@GoogleCloud">
+    <meta name="twitter:creator" content="@JustinBeckwith">
+    <meta name="twitter:title" content="You can do that on App Engine!?">
+    <meta name="twitter:description" content="I came to GCP Next 2017 to learn all about App Engine.  You can too!">
+    <meta name="twitter:image" content="{{url}}">
+    <script>//window.location.href='https://cloud.google.com/appengine'</script>
+  </head>
+  <body>
+    <a class="twitter-share-button" 
+        data-size="large"
+        href="https://twitter.com/intent/tweet?text=I%20came%20to%20GCP%20Next%202017%20to%20learn%20all%20about%20App%20Engine.%20You%20can%20too!">
+      Tweet
+    </a>
+    <div style="margin-top:15px;">
+      <a href="https://cloud.google.com/appengine">
+        <img src="{{url}}">
+      </a>
+    <div>
+    <script>
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+
+        return t;
+      }(document, "script", "twitter-wjs"));
+    </script>
+  </body>
+</html>

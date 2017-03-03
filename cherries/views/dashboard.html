@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic splitting dashboard</title>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.4.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      img {
+        width: 100px;
+        height: 100px; 
+      }
+      
+      #container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      #container div {
+        width: 100px;
+      }
+
+      #winner {
+        display: none;
+        color: red;
+        text-transform: uppercase;
+        animation-name: blinker;  
+        animation-iteration-count: infinite;  
+        animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+        animation-duration: 1s; 
+        text-align: center;
+        font-size: 100px;
+      }
+
+      @keyframes blinker {  
+        from { opacity: 1.0; }
+        to { opacity: 0.0; }
+      }
+
+    </style>
+</head>
+<body>
+
+  <div id="container">
+  {% for fruit in results %}
+    <div>
+      <img src="images/{{fruit.key}}.jpg" >
+      <span id="{{fruit.key}}">{{fruit.count}}</span>
+    </div>
+  {% endfor %}
+  </div>
+
+  <div id="winner">
+    winner!!!1
+  </div>
+
+  <script>
+    var subscribeKey = "{{subscribeKey}}";
+    let results = {{results|json|raw}};
+
+    let nub = new PubNub({
+      subscribeKey: subscribeKey,
+      ssl: true
+    });
+
+    nub.addListener({
+      message: function(message) {
+        let fruits = message.message;
+        fruits.forEach(function(fruit) {
+          if (fruit.key == "durian" && fruit.count > 0) {
+            document.getElementById('winner').style.display = 'block';
+          }
+          document.getElementById(fruit.key).innerText = fruit.count;
+        });
+      }
+    });
+
+    nub.subscribe({
+      channels: ['click'],
+    });
+
+  </script>
+</body>
+</html>

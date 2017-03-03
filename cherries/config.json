@@ -1,0 +1,21 @@
+{
+  "fruits" : [
+    {
+      "key": "apple",
+      "cc": "“Apples” by allispossible.org.uk is licensed under CC BY 2.0",
+      "url": "https://ccsearch.creativecommons.org/image/detail/jKIhlpsWyZ2vqluoD_cl8A=="
+    }, {
+      "key": "cherry",
+      "cc": "”cherries” by Isabel Eyre is licensed under CC BY 2.0",
+      "url": "https://ccsearch.creativecommons.org/image/detail/7MiEb_ljvw993eEyyE0dVA=="
+    }, {
+      "key": "durian",
+      "cc": "“durian at wal-mart” by Rex Pe is licensed under CC BY 2.0",
+      "url": "https://ccsearch.creativecommons.org/image/detail/qsCzS1F3wirDSjusUxRWuA=="
+    }, {
+      "key": "lemon",
+      "cc": "“Lemons” by Mike Mozart is licensed under CC BY 2.0",
+      "url": "https://ccsearch.creativecommons.org/image/detail/8qzAhCyzzGiCkIvHkURQPw=="
+    }
+  ]
+}
