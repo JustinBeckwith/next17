@@ -114,29 +114,7 @@ app.post('/sendpic', upload.array(), (req, res, next) => {
 
     console.log(`Thumb path: ${thumbPath}`);
     console.log(`Card path: ${cardPath}`);
-
-    // // use the cloud vision API to find stuff
-    // console.log('analyzing the image...');
-    // vision.detectFaces(filePath, (err, faces) => {
-
-    //   if (err) {
-    //     res.status(500).send('Error analyzing image.');
-    //     return next(err);
-    //   }
-
-    //   console.log('Image analysis complete!');
-    //   console.log(faces);
-
-    //   // return the results to the browser
-    //   res.json(faces);
-
-      // clean up the image
-      // fs.unlink(filePath, (err) => {
-      //   if (err) {
-      //     console.error(`error cleaning up file ${filePath}`);
-      //   }
-      // });
-    // });
+      
   });
 });
 
@@ -158,3 +136,11 @@ const server = app.listen(process.env.PORT || 8080, '0.0.0.0', () => {
 
 // gm convert meinahat.jpg -resize 368x368^ -gravity Center -crop 368x368+0+0 +repage thumb.png 
 // gm convert -size 1024x580 xc:transparent -page +595+106 thumb.png -page +0+0 twittercard.png -flatten result.png
+
+// clean up the image
+      // fs.unlink(filePath, (err) => {
+      //   if (err) {
+      //     console.error(`error cleaning up file ${filePath}`);
+      //   }
+      // });
+    // });

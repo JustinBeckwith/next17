@@ -5,22 +5,47 @@
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.4.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
-      img {
-        width: 100px;
-        height: 100px; 
+
+      html, body {
+        margin: 0px;
+        height: 100%;
+        overflow: hidden;
+        font-family: arial;
+        font-size: 30px;
+        color: #333;
+        background-color: #333;
       }
-      
+
       #container {
-        display: flex;
-        justify-content: space-around;
+        height: 100%;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       #container div {
-        width: 100px;
+        height: 50%;
+        width: 50%;
+        background-size: cover;
+        float: left;
+        position: relative;
+      }
+
+      #container div span {
+        background-color:rgba(204,204,204,0.75);
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        bottom: 0px;
+        float: left;
+        position: absolute;
       }
 
       #winner {
         display: none;
+        width: 100%;
+        position: absolute;
+        z-index: 10;
         color: red;
         text-transform: uppercase;
         animation-name: blinker;  
@@ -29,6 +54,8 @@
         animation-duration: 1s; 
         text-align: center;
         font-size: 100px;
+        background-color: rgba(204,204,204,0.75)
+        
       }
 
       @keyframes blinker {  
@@ -40,17 +67,16 @@
 </head>
 <body>
 
+  <div id="winner">
+    winner!!!1
+  </div>
+
   <div id="container">
   {% for fruit in results %}
-    <div>
-      <img src="images/{{fruit.key}}.jpg" >
+    <div style="background-image: url(images/{{fruit.key}}.jpg)">
       <span id="{{fruit.key}}">{{fruit.count}}</span>
     </div>
   {% endfor %}
-  </div>
-
-  <div id="winner">
-    winner!!!1
   </div>
 
   <script>
