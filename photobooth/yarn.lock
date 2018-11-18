@@ -42,9 +42,9 @@
     string-format-obj "^1.1.0"
     through2 "^2.0.3"
 
-"@google-cloud/storage@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-0.7.0.tgz#87eb7bde35a1597511cba7b651e666178ac90fe1"
+"@google-cloud/storage@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-0.8.0.tgz#8ebc0d83bbdcf6f3d524ef219a3fc38994092806"
   dependencies:
     "@google-cloud/common" "^0.12.0"
     arrify "^1.0.0"
